@@ -35,6 +35,10 @@ public class SwaggerDemo {
         System.out.println("But then when processing the requestBody, a new ModelConverterContextImpl is created and processedTypes is empty.");
         System.out.println("As RequestBody contains MyBrokenId, the schema for MyBrokenId is generated again, but without the parent reference.");
         System.out.println("We need the parent reference as we have additional information on the parent (which we need to add manually because of 3310, see Issue3310ContextDemo.java).");
+        System.out.println();
+        System.out.println("The same problem occurs, if AbstractId itself is not used within the Api at all.");
+        System.out.println("Then the parent class is not processed at all, only the child class MyBrokenId is converted and Mixin from parent is ignored.");
+        System.out.println("This can be tested by removing the return type in Api.java (the return was only added to have the AbstractId processed at all).");
 
     }
 

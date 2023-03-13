@@ -13,12 +13,4 @@ class Api {
         return new MyBrokenId("123");
     }
 
-//        @Path("/my-other-path")
-//        @POST
-//        public MyNiceId restEndpointWithoutBody() {
-//            // MyNiceId is not in RequestBody type and will not be overridden
-//            // adding it here to use it somewhere and have it in the schema
-//            return new MyNiceId("123");
-//        }
-
 }
